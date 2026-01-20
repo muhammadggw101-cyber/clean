@@ -338,33 +338,6 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.benefits-layout {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: minmax(240px, 1fr) minmax(0, 2fr);
-  align-items: start;
-}
-
-.benefits-summary {
-  display: grid;
-  gap: 12px;
-}
-
-.benefits-points {
-  list-style: none;
-  display: grid;
-  gap: 10px;
-  color: var(--muted);
-  margin-top: 8px;
-}
-
-.benefits-points li::before {
-  content: "•";
-  color: var(--primary);
-  font-weight: 700;
-  margin-right: 8px;
-}
-
 .benefit-icon {
   width: 44px;
   height: 44px;
@@ -556,37 +529,6 @@ a {
   justify-self: start;
 }
 
-.before-after-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 8px;
-}
-
-.difficulty {
-  display: grid;
-  gap: 4px;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.difficulty-dots {
-  display: flex;
-  gap: 6px;
-}
-
-.difficulty-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #dbe6f0;
-}
-
-.difficulty-dot.is-active {
-  background: var(--primary);
-}
-
 .checklists-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -602,11 +544,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 6px;
-}
-
-.checklist-note {
-  color: var(--muted);
-  font-size: 0.95rem;
 }
 
 .checklist-badge {
@@ -646,46 +583,17 @@ a {
   border: 1px solid var(--border);
   padding: 16px;
   display: grid;
-  gap: 14px;
-}
-
-.review-header {
-  display: flex;
-  align-items: center;
   gap: 12px;
+  align-items: center;
+  text-align: center;
 }
 
-.review-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
+.review-image {
   background: linear-gradient(135deg, #dcecff, #f6f0d6);
-  display: grid;
-  place-items: center;
-  font-weight: 700;
+  border-radius: 14px;
+  padding: 36px 16px;
+  font-weight: 600;
   color: var(--primary-dark);
-}
-
-.review-meta {
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-.review-text {
-  color: var(--muted);
-}
-
-.review-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.review-stars {
-  letter-spacing: 2px;
-  color: #f4b740;
-  font-weight: 700;
 }
 
 .review-badge {
@@ -712,20 +620,6 @@ a {
   gap: 24px;
 }
 
-.contact-item {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 16px;
-  display: grid;
-  gap: 8px;
-}
-
-.contact-note {
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
 .contacts-actions {
   display: flex;
   gap: 12px;
@@ -740,26 +634,6 @@ a {
   box-shadow: var(--shadow);
   display: grid;
   gap: 12px;
-}
-
-.contacts-card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.contacts-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-.contacts-tags span {
-  background: #f1f5f8;
-  padding: 4px 10px;
-  border-radius: 999px;
 }
 
 .muted {
@@ -791,21 +665,6 @@ a {
 .footer-contacts {
   display: grid;
   gap: 12px;
-}
-
-.footer-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-.footer-tags span {
-  background: #f1f5f8;
-  padding: 4px 10px;
-  border-radius: 999px;
 }
 
 .footer-social {
@@ -856,31 +715,6 @@ a {
   gap: 12px;
 }
 
-.modal-form {
-  display: grid;
-  gap: 12px;
-}
-
-.modal-field {
-  display: grid;
-  gap: 6px;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-.modal-field input {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 12px 14px;
-  font-size: 0.95rem;
-  font-family: inherit;
-}
-
-.modal-field input:focus {
-  outline: 2px solid rgba(31, 122, 224, 0.2);
-  border-color: var(--primary);
-}
-
 .modal-close {
   position: absolute;
   top: 12px;
@@ -904,10 +738,6 @@ a {
   .header-inner {
     grid-template-columns: auto auto;
     justify-content: space-between;
-  }
-
-  .benefits-layout {
-    grid-template-columns: 1fr;
   }
 
   .nav {
@@ -947,7 +777,6 @@ a {
   .hero-actions,
   .hero-links,
   .contacts-actions,
-  .contacts-card-actions,
   .footer-actions {
     flex-direction: column;
     align-items: stretch;
