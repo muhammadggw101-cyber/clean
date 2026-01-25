@@ -87,21 +87,51 @@ window.SiteContent = {
       title: 'Квартира',
       subtitle: 'Аккуратная ежедневная чистота с фокусом на кухню и санузел.',
       bullets: ['Сухая и влажная уборка', 'Мытье зеркал и стекол', 'Сортировка и сбор мусора', 'Уход за кухонными фасадами'],
-      gallery: ['images/placeholder.svg', 'images/placeholder.svg', 'images/placeholder.svg', 'images/placeholder.svg']
+      gallery: [
+        'images/placeholder.svg',
+        'images/placeholder.svg',
+        'images/placeholder.svg',
+        {
+          type: 'video',
+          src: 'videos/checklist-flat.mp4',
+          poster: 'images/placeholder.svg',
+          label: 'Видео процесса уборки квартиры'
+        }
+      ]
     },
     {
       key: 'house',
       title: 'Дом / Коттедж',
       subtitle: 'Большие площади и сложные поверхности под контролем чек-листа.',
       bullets: ['Лестницы и перила', 'Чистка входных групп', 'Уход за каменными поверхностями', 'Проветривание и ароматизация'],
-      gallery: ['images/placeholder.svg', 'images/placeholder.svg', 'images/placeholder.svg', 'images/placeholder.svg']
+      gallery: [
+        'images/placeholder.svg',
+        'images/placeholder.svg',
+        'images/placeholder.svg',
+        {
+          type: 'video',
+          src: 'videos/checklist-house.mp4',
+          poster: 'images/placeholder.svg',
+          label: 'Видео процесса уборки дома'
+        }
+      ]
     },
     {
       key: 'office',
       title: 'Офис',
       subtitle: 'Деликатная уборка рабочих мест без отвлечения команды.',
       bullets: ['Рабочие столы и техника', 'Обработка санузлов', 'Контроль расходников', 'Точечная дезинфекция'],
-      gallery: ['images/placeholder.svg', 'images/placeholder.svg', 'images/placeholder.svg', 'images/placeholder.svg']
+      gallery: [
+        'images/placeholder.svg',
+        'images/placeholder.svg',
+        'images/placeholder.svg',
+        {
+          type: 'video',
+          src: 'videos/checklist-office.mp4',
+          poster: 'images/placeholder.svg',
+          label: 'Видео процесса уборки офиса'
+        }
+      ]
     }
   ],
   reviews: [

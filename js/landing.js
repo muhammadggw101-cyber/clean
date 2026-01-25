@@ -152,12 +152,28 @@ if (tabsList && panelsWrap) {
         </div>
         <div class="gallery-grid">
           ${item.gallery
-            .map(
-              (img, idx) => `
-              <button type="button" data-lightbox="${img}" aria-label="Открыть фото ${idx + 1} для ${item.title}">
-                <img src="${img}" alt="${item.title} — фото ${idx + 1}" loading="lazy">
-              </button>`
-            )
+            .map((media, idx) => {
+              if (typeof media === 'string') {
+                return `
+              <button type="button" data-lightbox="${media}" aria-label="Открыть фото ${idx + 1} для ${item.title}">
+                <img src="${media}" alt="${item.title} — фото ${idx + 1}" loading="lazy">
+              </button>`;
+              }
+              if (media?.type === 'video') {
+                const label = media.label || `Видео ${idx + 1} для ${item.title}`;
+                const poster = media.poster || '';
+                const type = media.mimeType || 'video/mp4';
+                return `
+              <div class="gallery-video" role="group" aria-label="${label}">
+                <video controls preload="metadata" poster="${poster}">
+                  <source src="${media.src}" type="${type}">
+                  Ваш браузер не поддерживает видео.
+                </video>
+                <span class="gallery-video__label">${label}</span>
+              </div>`;
+              }
+              return '';
+            })
             .join('')}
         </div>
       </div>`
