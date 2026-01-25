@@ -116,14 +116,19 @@
         <ul data-contacts="list"></ul>
       </div>
       <div>
-        <h4>Мессенджеры</h4>
-        <ul data-contacts="socials"></ul>
+        <h4>Ссылки</h4>
+        <ul data-contacts="socials" class="contact-buttons"></ul>
       </div>
       <div>
-        <h4>Документы</h4>
+        <h4>Навигация</h4>
         <ul>
-          <li><a href="#">Политика конфиденциальности (заглушка)</a></li>
-          <li><a href="#">Публичная оферта (заглушка)</a></li>
+          <li><a href="#hero">Главная</a></li>
+          <li><a href="#guarantee">Гарантии</a></li>
+          <li><a href="#cases">До / После</a></li>
+          <li><a href="#packages">Пакеты</a></li>
+          <li><a href="#checklists">Чек-листы</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#contacts">Контакты</a></li>
         </ul>
       </div>
     </div>
@@ -136,19 +141,14 @@
         <button type="button" class="button secondary" data-close-modal>Закрыть</button>
       </header>
       <form>
-        <label>
-          Имя (необязательно)
-          <input type="text" name="name" placeholder="Как к вам обращаться">
-        </label>
-        <label>
-          Телефон (необязательно)
-          <input type="tel" name="phone" placeholder="Ваш номер">
-        </label>
-        <label>
-          Комментарий
-          <textarea name="comment" placeholder="Что важно учесть?"></textarea>
-        </label>
-        <button type="submit" class="button primary">Отправить запрос</button>
+        <p class="modal-hint">
+          В сообщении коротко напишите: тип помещения, метраж и желаемый результат.
+        </p>
+        <div class="modal-actions">
+          <a class="button primary" href="tel:+79063816600">Позвонить +7 906 381 66 00</a>
+          <a class="button secondary" href="https://wa.me/79063816600" target="_blank" rel="noreferrer">Написать в WhatsApp</a>
+          <a class="button secondary" href="https://t.me/NataliaTihonowa" target="_blank" rel="noreferrer">Написать в Telegram</a>
+        </div>
       </form>
     </div>
   </div>

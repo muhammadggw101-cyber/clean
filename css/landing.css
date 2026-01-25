@@ -11,8 +11,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
+  flex-wrap: wrap;
+  padding: 12px 0;
   gap: 20px;
+  min-width: 0;
 }
 
 .logo {
@@ -20,6 +22,9 @@
   flex-direction: column;
   font-weight: 700;
   color: var(--color-brand-2);
+  max-width: 100%;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .logo span {
@@ -48,18 +53,21 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .menu-toggle {
   display: none;
-  background: transparent;
-  border: 1px solid var(--color-border);
+  background: var(--color-brand);
+  border: 1px solid transparent;
+  color: #ffffff;
   border-radius: 10px;
-  padding: 8px 12px;
+  padding: 10px 16px;
+  font-weight: 600;
 }
 
 .hero {
-  padding-top: 96px;
+  padding-top: 64px;
 }
 
 .hero-grid {
@@ -442,6 +450,26 @@
   width: 100%;
 }
 
+.gallery-video {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gallery-video video {
+  width: 100%;
+  height: 120px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  object-fit: cover;
+  background: #000;
+}
+
+.gallery-video__label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
 .reviews {
   background: var(--color-surface);
 }
@@ -496,6 +524,11 @@
   color: rgba(248, 250, 252, 0.7);
 }
 
+.footer .button.secondary {
+  color: #f8fafc;
+  border-color: rgba(248, 250, 252, 0.4);
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -533,7 +566,8 @@
 }
 
 .modal input,
-.modal textarea {
+.modal textarea,
+.modal select {
   width: 100%;
   padding: 12px 14px;
   border-radius: 12px;
@@ -543,6 +577,30 @@
 
 .modal textarea {
   min-height: 120px;
+}
+
+.modal-hint {
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-buttons {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-buttons li {
+  display: flex;
 }
 
 .lightbox {
@@ -565,9 +623,11 @@
     display: flex;
   }
 
-  .menu-toggle {
+.menu-toggle {
     display: inline-flex;
-  }
+    align-items: center;
+    justify-content: center;
+}
 
   .header-inner {
     flex-wrap: wrap;
