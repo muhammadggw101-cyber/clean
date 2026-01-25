@@ -287,9 +287,30 @@ const setupModal = () => {
 
   const form = modal.querySelector('form');
   if (form) {
+    const typeSelect = form.querySelector('[data-service-type]');
+    const commentField = form.querySelector('[data-service-comment]');
+    const whatsappButton = form.querySelector('[data-contact-action="whatsapp"]');
+    const telegramButton = form.querySelector('[data-contact-action="telegram"]');
+    const updateLinks = () => {
+      const selectedType = typeSelect?.value || 'Дом';
+      const comment = commentField?.value.trim();
+      let message = `Пишу вам с сайта. Выбранный: ${selectedType}.`;
+      if (comment) {
+        message += ` Комментарий: ${comment}`;
+      }
+      if (whatsappButton) {
+        whatsappButton.href = `https://wa.me/79063816600?text=${encodeURIComponent(message)}`;
+      }
+      if (telegramButton) {
+        const pageUrl = window.location.href;
+        telegramButton.href = `https://t.me/share/url?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(message)}`;
+      }
+    };
+
     form.addEventListener('submit', (event) => {
       event.preventDefault();
     });
+    updateLinks();
   }
 };
 
