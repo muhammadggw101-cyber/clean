@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Формула чистоты — премиальный клининг</title>
+  <meta name="description" content="Формула чистоты — клининг с прозрачной сметой, чек-листами и гарантией качества.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#hero">Формула чистоты <span>Клининг нового уровня</span></a>
+      <nav class="nav-links" data-menu aria-label="Основная навигация">
+        <a class="nav-link" href="#guarantee">Гарантии</a>
+        <a class="nav-link" href="#cases">До / После</a>
+        <a class="nav-link" href="#packages">Пакеты</a>
+        <a class="nav-link" href="#checklists">Чек-листы</a>
+        <a class="nav-link" href="#reviews">Отзывы</a>
+        <a class="nav-link" href="#contacts">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <button class="button secondary" data-open-modal>Заказать уборку</button>
+        <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Открыть меню">Меню</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge" data-hero="badge"></span>
+          <h1 data-hero="title"></h1>
+          <p data-hero="subtitle"></p>
+          <div class="hero-actions">
+            <button class="button primary" data-open-modal data-hero="primary"></button>
+            <a class="button secondary" href="#packages" data-hero="secondary"></a>
+          </div>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <span class="badge media-badge">Премиальный подход</span>
+          <img src="images/placeholder.svg" alt="" data-hero="image" loading="lazy">
+          <span class="media-note" data-hero="note"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="guarantee" class="guarantee">
+      <div class="container guarantee-grid">
+        <div class="guarantee-copy">
+          <h2 class="section-title" data-guarantee="title"></h2>
+          <p data-guarantee="description"></p>
+          <div class="guarantee-list" data-guarantee="benefits"></div>
+        </div>
+        <div class="guarantee-visual">
+          <span class="badge" data-guarantee="badge"></span>
+          <img src="images/placeholder.svg" alt="" data-guarantee="image" loading="lazy">
+          <p data-guarantee="note"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases" class="cases">
+      <div class="container">
+        <div class="section-title">До / После</div>
+        <p class="section-subtitle">Сравните реальные кейсы и почувствуйте разницу между «до» и «после».</p>
+        <div class="carousel-controls">
+          <button class="carousel-button" type="button" data-carousel="prev" aria-label="Предыдущий кейс">Назад</button>
+          <button class="carousel-button" type="button" data-carousel="next" aria-label="Следующий кейс">Дальше</button>
+        </div>
+        <div class="carousel">
+          <div class="carousel-track" data-cases="track" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="packages" class="packages">
+      <div class="container">
+        <h2 class="section-title">Пакетные предложения</h2>
+        <p class="section-subtitle">Фиксированные решения без конструктора — выбирайте удобный формат.</p>
+        <div class="packages-grid" data-packages="grid"></div>
+      </div>
+    </section>
+
+    <section id="checklists" class="checklists">
+      <div class="container">
+        <h2 class="section-title">Чек-листы</h2>
+        <p class="section-subtitle">Каждый формат уборки оформлен в понятные шаги и фотопримеры.</p>
+        <div class="tabs" role="tablist" data-tabs="list"></div>
+        <div data-tabs="panels"></div>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+      <div class="container">
+        <h2 class="section-title">Отзывы наших клиентов</h2>
+        <p class="section-subtitle">Все отзывы подтверждены — мы показываем реальные впечатления без рекламных фильтров.</p>
+        <div class="reviews-grid" data-reviews="grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacts" class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Формула чистоты</h3>
+        <p>Премиальный клининг с заботой о вашем пространстве.</p>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul data-contacts="list"></ul>
+      </div>
+      <div>
+        <h4>Мессенджеры</h4>
+        <ul data-contacts="socials"></ul>
+      </div>
+      <div>
+        <h4>Документы</h4>
+        <ul>
+          <li><a href="#">Политика конфиденциальности (заглушка)</a></li>
+          <li><a href="#">Публичная оферта (заглушка)</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="leadModal" aria-hidden="true" role="dialog" aria-label="Оставить заявку">
+    <div class="modal">
+      <header>
+        <h3>Оставить заявку</h3>
+        <button type="button" class="button secondary" data-close-modal>Закрыть</button>
+      </header>
+      <form>
+        <label>
+          Имя (необязательно)
+          <input type="text" name="name" placeholder="Как к вам обращаться">
+        </label>
+        <label>
+          Телефон (необязательно)
+          <input type="tel" name="phone" placeholder="Ваш номер">
+        </label>
+        <label>
+          Комментарий
+          <textarea name="comment" placeholder="Что важно учесть?"></textarea>
+        </label>
+        <button type="submit" class="button primary">Отправить запрос</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="lightbox" aria-hidden="true" role="dialog" aria-label="Просмотр изображения">
+    <div class="modal lightbox">
+      <header>
+        <h3>Просмотр</h3>
+        <button type="button" class="button secondary" data-close-modal>Закрыть</button>
+      </header>
+      <img src="images/placeholder.svg" alt="Просмотр изображения" loading="lazy">
+    </div>
+  </div>
+
+  <script src="js/site-content.js"></script>
+  <script src="js/landing.js"></script>
+</body>
+</html>
