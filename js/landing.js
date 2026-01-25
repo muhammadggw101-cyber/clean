@@ -194,7 +194,10 @@ if (contactsList) {
 const socialsList = document.querySelector('[data-contacts="socials"]');
 if (socialsList) {
   socialsList.innerHTML = contacts.socials
-    .map((social) => `<li><a href="${social.url}" target="_blank" rel="noreferrer">${social.label}: ${social.handle}</a></li>`)
+    .map(
+      (social) =>
+        `<li><a class="button secondary" href="${social.url}" target="_blank" rel="noreferrer">${social.label}</a></li>`
+    )
     .join('');
 }
 
@@ -270,8 +273,6 @@ const setupModal = () => {
   if (form) {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
-      close();
-      alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
     });
   }
 };
