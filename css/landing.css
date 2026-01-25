@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 16px 0;
+  padding: 12px 0;
   gap: 20px;
   min-width: 0;
 }
@@ -58,14 +58,16 @@
 
 .menu-toggle {
   display: none;
-  background: transparent;
-  border: 1px solid var(--color-border);
+  background: var(--color-brand);
+  border: 1px solid transparent;
+  color: #ffffff;
   border-radius: 10px;
-  padding: 8px 12px;
+  padding: 10px 16px;
+  font-weight: 600;
 }
 
 .hero {
-  padding-top: 96px;
+  padding-top: 64px;
 }
 
 .hero-grid {
@@ -621,9 +623,11 @@
     display: flex;
   }
 
-  .menu-toggle {
+.menu-toggle {
     display: inline-flex;
-  }
+    align-items: center;
+    justify-content: center;
+}
 
   .header-inner {
     flex-wrap: wrap;

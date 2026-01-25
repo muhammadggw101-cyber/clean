@@ -165,7 +165,7 @@ if (tabsList && panelsWrap) {
                 const type = media.mimeType || 'video/mp4';
                 return `
               <div class="gallery-video" role="group" aria-label="${label}">
-                <video controls preload="metadata" poster="${poster}">
+                <video autoplay muted loop playsinline controls preload="metadata" poster="${poster}">
                   <source src="${media.src}" type="${type}">
                   Ваш браузер не поддерживает видео.
                 </video>
