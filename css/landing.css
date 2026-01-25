@@ -496,6 +496,11 @@
   color: rgba(248, 250, 252, 0.7);
 }
 
+.footer .button.secondary {
+  color: #f8fafc;
+  border-color: rgba(248, 250, 252, 0.4);
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -533,7 +538,8 @@
 }
 
 .modal input,
-.modal textarea {
+.modal textarea,
+.modal select {
   width: 100%;
   padding: 12px 14px;
   border-radius: 12px;
@@ -543,6 +549,25 @@
 
 .modal textarea {
   min-height: 120px;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-buttons {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-buttons li {
+  display: flex;
 }
 
 .lightbox {

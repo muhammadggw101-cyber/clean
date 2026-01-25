@@ -116,8 +116,8 @@
         <ul data-contacts="list"></ul>
       </div>
       <div>
-        <h4>Мессенджеры</h4>
-        <ul data-contacts="socials"></ul>
+        <h4>Ссылки</h4>
+        <ul data-contacts="socials" class="contact-buttons"></ul>
       </div>
       <div>
         <h4>Документы</h4>
@@ -137,18 +137,23 @@
       </header>
       <form>
         <label>
-          Имя (необязательно)
-          <input type="text" name="name" placeholder="Как к вам обращаться">
-        </label>
-        <label>
-          Телефон (необязательно)
-          <input type="tel" name="phone" placeholder="Ваш номер">
+          Тип объекта
+          <select name="serviceType" data-service-type>
+            <option value="Дом">Дом</option>
+            <option value="Квартира">Квартира</option>
+            <option value="Офис">Офис</option>
+            <option value="Другое">Другое</option>
+          </select>
         </label>
         <label>
           Комментарий
-          <textarea name="comment" placeholder="Что важно учесть?"></textarea>
+          <textarea name="comment" placeholder="Что важно учесть?" data-service-comment></textarea>
         </label>
-        <button type="submit" class="button primary">Отправить запрос</button>
+        <div class="modal-actions">
+          <a class="button primary" href="tel:+79063816600">Позвонить +7 906 381 66 00</a>
+          <a class="button secondary" href="#" target="_blank" rel="noreferrer" data-contact-action="whatsapp">Написать в WhatsApp</a>
+          <a class="button secondary" href="#" target="_blank" rel="noreferrer" data-contact-action="telegram">Написать в Telegram</a>
+        </div>
       </form>
     </div>
   </div>
