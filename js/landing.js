@@ -152,12 +152,28 @@ if (tabsList && panelsWrap) {
         </div>
         <div class="gallery-grid">
           ${item.gallery
-            .map(
-              (img, idx) => `
-              <button type="button" data-lightbox="${img}" aria-label="Открыть фото ${idx + 1} для ${item.title}">
-                <img src="${img}" alt="${item.title} — фото ${idx + 1}" loading="lazy">
-              </button>`
-            )
+            .map((media, idx) => {
+              if (typeof media === 'string') {
+                return `
+              <button type="button" data-lightbox="${media}" aria-label="Открыть фото ${idx + 1} для ${item.title}">
+                <img src="${media}" alt="${item.title} — фото ${idx + 1}" loading="lazy">
+              </button>`;
+              }
+              if (media?.type === 'video') {
+                const label = media.label || `Видео ${idx + 1} для ${item.title}`;
+                const poster = media.poster || '';
+                const type = media.mimeType || 'video/mp4';
+                return `
+              <div class="gallery-video" role="group" aria-label="${label}">
+                <video controls preload="metadata" poster="${poster}">
+                  <source src="${media.src}" type="${type}">
+                  Ваш браузер не поддерживает видео.
+                </video>
+                <span class="gallery-video__label">${label}</span>
+              </div>`;
+              }
+              return '';
+            })
             .join('')}
         </div>
       </div>`
@@ -183,9 +199,9 @@ if (reviewsGrid) {
 
 const contactsList = document.querySelector('[data-contacts="list"]');
 if (contactsList) {
+  const phoneDigits = contacts.phone.replace(/\D/g, '');
   contactsList.innerHTML = `
-    <li><strong>Телефон:</strong> ${contacts.phone}</li>
-    <li><strong>Email:</strong> ${contacts.email}</li>
+    <li><strong>Телефон:</strong> <a href="tel:+${phoneDigits}">${contacts.phone}</a></li>
     <li><strong>График:</strong> ${contacts.hours}</li>
     <li><strong>Города:</strong> ${contacts.cities.join(', ')}</li>
   `;
@@ -194,7 +210,10 @@ if (contactsList) {
 const socialsList = document.querySelector('[data-contacts="socials"]');
 if (socialsList) {
   socialsList.innerHTML = contacts.socials
-    .map((social) => `<li><a href="${social.url}" target="_blank" rel="noreferrer">${social.label}: ${social.handle}</a></li>`)
+    .map(
+      (social) =>
+        `<li><a class="button secondary" href="${social.url}" target="_blank" rel="noreferrer">${social.label}</a></li>`
+    )
     .join('');
 }
 
@@ -270,8 +289,6 @@ const setupModal = () => {
   if (form) {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
-      close();
-      alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
     });
   }
 };
@@ -314,10 +331,23 @@ const setupMenuToggle = () => {
   const toggle = document.querySelector('[data-menu-toggle]');
   const nav = document.querySelector('[data-menu]');
   if (!toggle || !nav) return;
+  const updateToggle = (isOpen) => {
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.textContent = isOpen ? '✕' : 'Меню';
+    toggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+  };
   toggle.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('active');
-    toggle.setAttribute('aria-expanded', String(isOpen));
+    updateToggle(isOpen);
   });
+  nav.querySelectorAll('.nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (!nav.classList.contains('active')) return;
+      nav.classList.remove('active');
+      updateToggle(false);
+    });
+  });
+  updateToggle(false);
 };
 
 setupBeforeAfter();

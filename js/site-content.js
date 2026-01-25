@@ -87,21 +87,51 @@ window.SiteContent = {
       title: 'Квартира',
       subtitle: 'Аккуратная ежедневная чистота с фокусом на кухню и санузел.',
       bullets: ['Сухая и влажная уборка', 'Мытье зеркал и стекол', 'Сортировка и сбор мусора', 'Уход за кухонными фасадами'],
-      gallery: ['images/placeholder.svg', 'images/placeholder.svg', 'images/placeholder.svg', 'images/placeholder.svg']
+      gallery: [
+        'images/placeholder.svg',
+        'images/placeholder.svg',
+        'images/placeholder.svg',
+        {
+          type: 'video',
+          src: 'videos/checklist-flat.mp4',
+          poster: 'images/placeholder.svg',
+          label: 'Видео процесса уборки квартиры'
+        }
+      ]
     },
     {
       key: 'house',
       title: 'Дом / Коттедж',
       subtitle: 'Большие площади и сложные поверхности под контролем чек-листа.',
       bullets: ['Лестницы и перила', 'Чистка входных групп', 'Уход за каменными поверхностями', 'Проветривание и ароматизация'],
-      gallery: ['images/placeholder.svg', 'images/placeholder.svg', 'images/placeholder.svg', 'images/placeholder.svg']
+      gallery: [
+        'images/placeholder.svg',
+        'images/placeholder.svg',
+        'images/placeholder.svg',
+        {
+          type: 'video',
+          src: 'videos/checklist-house.mp4',
+          poster: 'images/placeholder.svg',
+          label: 'Видео процесса уборки дома'
+        }
+      ]
     },
     {
       key: 'office',
       title: 'Офис',
       subtitle: 'Деликатная уборка рабочих мест без отвлечения команды.',
       bullets: ['Рабочие столы и техника', 'Обработка санузлов', 'Контроль расходников', 'Точечная дезинфекция'],
-      gallery: ['images/placeholder.svg', 'images/placeholder.svg', 'images/placeholder.svg', 'images/placeholder.svg']
+      gallery: [
+        'images/placeholder.svg',
+        'images/placeholder.svg',
+        'images/placeholder.svg',
+        {
+          type: 'video',
+          src: 'videos/checklist-office.mp4',
+          poster: 'images/placeholder.svg',
+          label: 'Видео процесса уборки офиса'
+        }
+      ]
     }
   ],
   reviews: [
@@ -111,13 +141,16 @@ window.SiteContent = {
     { image: 'images/placeholder.svg', label: 'Отзыв о регулярном сервисе' }
   ],
   contacts: {
-    phone: '+7 (8352) 49-72-73',
+    phone: '+7 906 381 66 00',
     email: 'formula.clean21@mail.ru',
     socials: [
-      { label: '2ГИС', url: 'https://2gis.ru/cheboksary/geo/70000001019066188', handle: 'Каталог 2ГИС' },
-      { label: 'Avito', url: 'https://www.avito.ru/cheboksary/predlozheniya_uslug/klining_himchistka_ozonirovaniemyte_okon_4849727398', handle: 'Объявление' }
+      { label: '2ГИС', url: 'https://2gis.ru/cheboksary/geo/70000001019066188', handle: 'Каталог' },
+      { label: 'Avito', url: 'https://www.avito.ru/cheboksary/predlozheniya_uslug/klining_himchistka_ozonirovaniemyte_okon_4849727398', handle: 'Объявление' },
+      { label: 'Яндекс отзывы', url: 'https://yandex.ru/maps/org/formula_chistoty/180167642950/', handle: 'Рейтинг' },
+      { label: 'Telegram', url: 'https://t.me/NataliaTihonowa', handle: '@NataliaTihonowa' },
+      { label: 'WhatsApp', url: 'https://wa.me/79063816600', handle: 'Написать' }
     ],
     hours: 'Каждый день с 8:00 до 22:00',
-    cities: ['Чебоксары']
+    cities: ['Чебоксары', 'Чебоксарский район, выезд в Чувашию по договоренности']
   }
 };
