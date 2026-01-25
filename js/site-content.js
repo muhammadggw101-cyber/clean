@@ -50,7 +50,7 @@ window.SiteContent = {
   packages: [
     {
       name: 'Быстрый апгрейд',
-      priceFrom: 'от 12 000 ₸',
+      priceFrom: 'от 12 000 ₽',
       badge: 'Идеально для регулярной уборки',
       bullets: ['Кухня и санузел', 'Пылесос и влажная уборка', 'Проверка по чек-листу'],
       mediaPreview: 'images/placeholder.svg',
@@ -58,7 +58,7 @@ window.SiteContent = {
     },
     {
       name: 'Премиум квартира',
-      priceFrom: 'от 22 000 ₸',
+      priceFrom: 'от 22 000 ₽',
       badge: 'Хит сезона',
       bullets: ['Полировка поверхностей', 'Постель и текстиль', 'Отчет в мессенджере'],
       mediaPreview: 'images/placeholder.svg',
@@ -66,7 +66,7 @@ window.SiteContent = {
     },
     {
       name: 'Офис без следов',
-      priceFrom: 'от 30 000 ₸',
+      priceFrom: 'от 30 000 ₽',
       badge: 'Для команд и шоурумов',
       bullets: ['Рабочие зоны и кухня', 'Дезинфекция точек касания', 'Гибкое время начала'],
       mediaPreview: 'images/placeholder.svg',
@@ -74,7 +74,7 @@ window.SiteContent = {
     },
     {
       name: 'После переезда',
-      priceFrom: 'от 38 000 ₸',
+      priceFrom: 'от 38 000 ₽',
       badge: 'Глубокая очистка',
       bullets: ['Пыль и следы ремонта', 'Мытье стекол', 'Контроль качества в день уборки'],
       mediaPreview: 'images/placeholder.svg',
