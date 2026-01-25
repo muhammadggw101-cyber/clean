@@ -183,9 +183,9 @@ if (reviewsGrid) {
 
 const contactsList = document.querySelector('[data-contacts="list"]');
 if (contactsList) {
+  const phoneDigits = contacts.phone.replace(/\D/g, '');
   contactsList.innerHTML = `
-    <li><strong>Телефон:</strong> ${contacts.phone}</li>
-    <li><strong>Email:</strong> ${contacts.email}</li>
+    <li><strong>Телефон:</strong> <a href="tel:+${phoneDigits}">${contacts.phone}</a></li>
     <li><strong>График:</strong> ${contacts.hours}</li>
     <li><strong>Города:</strong> ${contacts.cities.join(', ')}</li>
   `;
@@ -336,10 +336,23 @@ const setupMenuToggle = () => {
   const toggle = document.querySelector('[data-menu-toggle]');
   const nav = document.querySelector('[data-menu]');
   if (!toggle || !nav) return;
+  const updateToggle = (isOpen) => {
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.textContent = isOpen ? '✕' : 'Меню';
+    toggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+  };
   toggle.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('active');
-    toggle.setAttribute('aria-expanded', String(isOpen));
+    updateToggle(isOpen);
   });
+  nav.querySelectorAll('.nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (!nav.classList.contains('active')) return;
+      nav.classList.remove('active');
+      updateToggle(false);
+    });
+  });
+  updateToggle(false);
 };
 
 setupBeforeAfter();

@@ -11,8 +11,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 16px 0;
   gap: 20px;
+  min-width: 0;
 }
 
 .logo {
@@ -20,6 +22,9 @@
   flex-direction: column;
   font-weight: 700;
   color: var(--color-brand-2);
+  max-width: 100%;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .logo span {
@@ -48,6 +53,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .menu-toggle {
