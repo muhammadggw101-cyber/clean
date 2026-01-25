@@ -142,10 +142,9 @@ window.SiteContent = {
   ],
   contacts: {
     phone: '+7 906 381 66 00',
-    email: 'formula.clean21@mail.ru',
     socials: [
-      { label: '2ГИС', url: 'https://2gis.ru/cheboksary/geo/70000001019066188', handle: 'Каталог' },
-      { label: 'Avito', url: 'https://www.avito.ru/cheboksary/predlozheniya_uslug/klining_himchistka_ozonirovaniemyte_okon_4849727398', handle: 'Объявление' },
+      { label: '2ГИС отзывы', url: 'https://2gis.ru/cheboksary/geo/70000001019066188', handle: 'Каталог' },
+      { label: 'Avito отзывы', url: 'https://www.avito.ru/cheboksary/predlozheniya_uslug/klining_himchistka_ozonirovaniemyte_okon_4849727398', handle: 'Объявление' },
       { label: 'Яндекс отзывы', url: 'https://yandex.ru/maps/org/formula_chistoty/180167642950/', handle: 'Рейтинг' },
       { label: 'Telegram', url: 'https://t.me/NataliaTihonowa', handle: '@NataliaTihonowa' },
       { label: 'WhatsApp', url: 'https://wa.me/79063816600', handle: 'Написать' }
