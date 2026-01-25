@@ -111,14 +111,13 @@ window.SiteContent = {
     { image: 'images/placeholder.svg', label: 'Отзыв о регулярном сервисе' }
   ],
   contacts: {
-    phone: 'Укажите телефон в .env',
-    email: 'Укажите email в .env',
+    phone: '+7 (8352) 49-72-73',
+    email: 'formula.clean21@mail.ru',
     socials: [
-      { label: 'WhatsApp', url: '#', handle: 'placeholder' },
-      { label: 'Telegram', url: '#', handle: 'placeholder' },
-      { label: 'Instagram', url: '#', handle: 'placeholder' }
+      { label: '2ГИС', url: 'https://2gis.ru/cheboksary/geo/70000001019066188', handle: 'Каталог 2ГИС' },
+      { label: 'Avito', url: 'https://www.avito.ru/cheboksary/predlozheniya_uslug/klining_himchistka_ozonirovaniemyte_okon_4849727398', handle: 'Объявление' }
     ],
     hours: 'Каждый день с 8:00 до 22:00',
-    cities: ['Ваш город', 'Второй город']
+    cities: ['Чебоксары']
   }
 };
