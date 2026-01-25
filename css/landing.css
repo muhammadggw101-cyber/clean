@@ -551,6 +551,11 @@
   min-height: 120px;
 }
 
+.modal-hint {
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+}
+
 .modal-actions {
   display: flex;
   flex-direction: column;

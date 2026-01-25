@@ -293,12 +293,6 @@ const setupModal = () => {
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();
-      updateLinks();
-    });
-
-    [typeSelect, commentField].forEach((field) => {
-      field?.addEventListener('input', updateLinks);
-      field?.addEventListener('change', updateLinks);
     });
     updateLinks();
   }
