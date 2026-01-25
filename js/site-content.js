@@ -88,9 +88,9 @@ window.SiteContent = {
       subtitle: 'Аккуратная ежедневная чистота с фокусом на кухню и санузел.',
       bullets: ['Сухая и влажная уборка', 'Мытье зеркал и стекол', 'Сортировка и сбор мусора', 'Уход за кухонными фасадами'],
       gallery: [
-        'images/flat-1.jpg',
-        'images/flat-2.jpg',
-        'images/flat-3.jpg',
+        'images/placeholder.svg',
+        'images/placeholder.svg',
+        'images/placeholder.svg',
         {
           type: 'video',
           src: 'videos/checklist-flat.mp4',

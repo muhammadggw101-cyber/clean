@@ -371,9 +371,20 @@ const setupMenuToggle = () => {
   updateToggle(false);
 };
 
+const setupHeaderCompact = () => {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  const update = () => {
+    header.classList.toggle('is-compact', window.scrollY > 80);
+  };
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+};
+
 setupBeforeAfter();
 setupTabs();
 setupCarouselControls();
 setupModal();
 setupLightbox();
 setupMenuToggle();
+setupHeaderCompact();
