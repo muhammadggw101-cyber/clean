@@ -11,8 +11,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 16px 0;
   gap: 20px;
+  min-width: 0;
 }
 
 .logo {
@@ -20,6 +22,9 @@
   flex-direction: column;
   font-weight: 700;
   color: var(--color-brand-2);
+  max-width: 100%;
+  min-width: 0;
+  word-break: break-word;
 }
 
 .logo span {
@@ -48,6 +53,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .menu-toggle {
@@ -496,6 +502,11 @@
   color: rgba(248, 250, 252, 0.7);
 }
 
+.footer .button.secondary {
+  color: #f8fafc;
+  border-color: rgba(248, 250, 252, 0.4);
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -533,7 +544,8 @@
 }
 
 .modal input,
-.modal textarea {
+.modal textarea,
+.modal select {
   width: 100%;
   padding: 12px 14px;
   border-radius: 12px;
@@ -543,6 +555,30 @@
 
 .modal textarea {
   min-height: 120px;
+}
+
+.modal-hint {
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-buttons {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-buttons li {
+  display: flex;
 }
 
 .lightbox {
