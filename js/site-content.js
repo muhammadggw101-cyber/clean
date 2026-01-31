@@ -56,12 +56,12 @@ window.SiteContent = {
     }
   ],
   gallery: [
-    { type: 'image', src: 'images/placeholder.svg', label: 'Светлая кухня' },
-    { type: 'image', src: 'images/placeholder.svg', label: 'Гостиная' },
-    { type: 'image', src: 'images/placeholder.svg', label: 'Санузел' },
-    { type: 'image', src: 'images/placeholder.svg', label: 'Спальня' },
-    { type: 'image', src: 'images/placeholder.svg', label: 'Окна и стекло' },
-    { type: 'image', src: 'images/placeholder.svg', label: 'Зона рецепции' },
+    { type: 'image', src: 'images/gallery-01.jpg', label: 'Светлая кухня' },
+    { type: 'image', src: 'images/gallery-02.jpg', label: 'Гостиная' },
+    { type: 'image', src: 'images/gallery-03.jpg', label: 'Санузел' },
+    { type: 'image', src: 'images/gallery-04.jpg', label: 'Спальня' },
+    { type: 'image', src: 'images/gallery-05.jpg', label: 'Окна и стекло' },
+    { type: 'image', src: 'images/gallery-06.jpg', label: 'Зона рецепции' },
     {
       type: 'video',
       src: 'videos/gallery-01.mp4',
@@ -100,10 +100,10 @@ window.SiteContent = {
     }
   ],
   reviews: [
-    { image: 'images/placeholder.svg', label: 'Отзыв о генеральной уборке' },
-    { image: 'images/placeholder.svg', label: 'Отзыв после переезда' },
-    { image: 'images/placeholder.svg', label: 'Отзыв от офиса' },
-    { image: 'images/placeholder.svg', label: 'Отзыв о регулярном сервисе' }
+    { image: 'images/review-01.jpg', label: 'Отзыв о генеральной уборке' },
+    { image: 'images/review-02.jpg', label: 'Отзыв после переезда' },
+    { image: 'images/review-03.jpg', label: 'Отзыв от офиса' },
+    { image: 'images/review-04.jpg', label: 'Отзыв о регулярном сервисе' }
   ],
   contacts: {
     phone: '+7 906 381 66 00',
@@ -119,3 +119,4 @@ window.SiteContent = {
     cities: ['Чебоксары', 'Чебоксарский район, выезд в Чувашию по договоренности']
   }
 };
+
