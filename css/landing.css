@@ -450,10 +450,13 @@
     flex-direction: row;
     align-items: center;
     gap: 8px;
+    flex: 1;
+    min-width: 0;
   }
 
   .logo-main {
     gap: 8px;
+    flex: 0 0 auto;
   }
 
   .logo-text {
@@ -465,6 +468,10 @@
     font-size: 0.8rem;
     margin-left: 6px;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    flex: 1 1 auto;
   }
 
   .nav-links {
