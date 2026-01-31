@@ -56,12 +56,12 @@ window.SiteContent = {
     }
   ],
   gallery: [
-    { type: 'image', src: 'images/gallery-01.jpg', label: 'Светлая кухня' },
-    { type: 'image', src: 'images/gallery-02.jpg', label: 'Гостиная' },
-    { type: 'image', src: 'images/gallery-03.jpg', label: 'Санузел' },
-    { type: 'image', src: 'images/gallery-04.jpg', label: 'Спальня' },
-    { type: 'image', src: 'images/gallery-05.jpg', label: 'Окна и стекло' },
-    { type: 'image', src: 'images/gallery-06.jpg', label: 'Зона рецепции' },
+    { type: 'image', src: 'images/gallery-01.jpg', label: 'Диван до / после' },
+    { type: 'image', src: 'images/gallery-02.jpg', label: 'Балконы' },
+    { type: 'image', src: 'images/gallery-03.jpg', label: 'Мебель' },
+    { type: 'image', src: 'images/gallery-04.jpg', label: 'Панорамные окна' },
+    { type: 'image', src: 'images/gallery-05.jpg', label: 'Мяшкая мебель' },
+    { type: 'image', src: 'images/gallery-06.jpg', label: 'Ковры' },
     {
       type: 'video',
       src: 'videos/gallery-01.mp4',
@@ -72,31 +72,31 @@ window.SiteContent = {
       type: 'video',
       src: 'videos/gallery-02.mp4',
       poster: 'images/placeholder.svg',
-      label: 'Видео полировки'
+      label: 'Тщательная уборка'
     },
     {
       type: 'video',
       src: 'videos/gallery-03.mp4',
       poster: 'images/placeholder.svg',
-      label: 'Видео кухни'
+      label: 'Видео уборки'
     },
     {
       type: 'video',
       src: 'videos/gallery-04.mp4',
       poster: 'images/placeholder.svg',
-      label: 'Видео санузла'
+      label: 'Видео точки продаж'
     },
     {
       type: 'video',
       src: 'videos/gallery-05.mp4',
       poster: 'images/placeholder.svg',
-      label: 'Видео текстиля'
+      label: 'Видео спец оборудования'
     },
     {
       type: 'video',
       src: 'videos/gallery-06.mp4',
       poster: 'images/placeholder.svg',
-      label: 'Видео финальной проверки'
+      label: 'Видео финального этапа'
     }
   ],
   reviews: [
@@ -119,4 +119,5 @@ window.SiteContent = {
     cities: ['Чебоксары', 'Чебоксарский район, выезд в Чувашию по договоренности']
   }
 };
+
 
