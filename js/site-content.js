@@ -3,7 +3,7 @@ window.SiteContent = {
     title: 'Формула чистоты для вашего дома и бизнеса',
     subtitle: 'Премиальный клининг, химчистка, озонирование и мытьё окон с понятной сметой, спокойной командой и качеством, которое можно проверить по чек-листу.',
     primaryCta: 'Рассчитать стоимость',
-    secondaryCta: 'Посмотреть пакеты',
+    secondaryCta: 'Посмотреть услуги',
     mediaAlt: 'Пример аккуратной современной уборки',
     badge: 'Гарантия прозрачной цены',
     note: 'Без лишнего шума и спешки'
@@ -21,117 +21,82 @@ window.SiteContent = {
     badge: 'Контроль качества 24/7',
     note: 'Я всегда остаюсь с вами на связи'
   },
-  casesBeforeAfter: [
+  services: [
     {
-      title: 'Кухня после активной недели',
-      description: 'Удалили жир и налет, выровняли блеск поверхностей.',
-      beforeImage: 'images/placeholder.svg',
-      afterImage: 'images/placeholder.svg',
-      difficulty: 4,
-      ctaLabel: 'Хочу так же'
+      title: 'Генеральная уборка',
+      description: 'Глубокая чистота всех зон, включая труднодоступные места.'
     },
     {
-      title: 'Санузел с известковым налетом',
-      description: 'Безопасные средства и деликатная полировка.',
-      beforeImage: 'images/placeholder.svg',
-      afterImage: 'images/placeholder.svg',
-      difficulty: 3,
-      ctaLabel: 'Повторить результат'
+      title: 'Регулярная уборка',
+      description: 'Поддерживаем порядок в доме и офисе без лишней суеты.'
     },
     {
-      title: 'Гостиная после ремонта',
-      description: 'Пыль, строительные следы и окна — под контролем.',
-      beforeImage: 'images/placeholder.svg',
-      afterImage: 'images/placeholder.svg',
-      difficulty: 5,
-      ctaLabel: 'Заказать похожее'
+      title: 'Уборка после ремонта',
+      description: 'Удаляем строительную пыль, следы работ и мусор.'
+    },
+    {
+      title: 'Химчистка мебели',
+      description: 'Деликатная очистка диванов, кресел и текстиля.'
+    },
+    {
+      title: 'Озонирование помещений',
+      description: 'Нейтрализация запахов и свежий воздух в помещении.'
+    },
+    {
+      title: 'Мытьё окон',
+      description: 'Стекла, рамы и подоконники без разводов.'
+    },
+    {
+      title: 'Полировка поверхностей',
+      description: 'Бережная обработка для блеска и защиты.'
+    },
+    {
+      title: 'Работа роторной машиной',
+      description: 'Глубокая очистка напольных покрытий и плитки.'
     }
   ],
-  packages: [
+  gallery: [
+    { type: 'image', src: 'images/placeholder.svg', label: 'Светлая кухня' },
+    { type: 'image', src: 'images/placeholder.svg', label: 'Гостиная' },
+    { type: 'image', src: 'images/placeholder.svg', label: 'Санузел' },
+    { type: 'image', src: 'images/placeholder.svg', label: 'Спальня' },
+    { type: 'image', src: 'images/placeholder.svg', label: 'Окна и стекло' },
+    { type: 'image', src: 'images/placeholder.svg', label: 'Зона рецепции' },
     {
-      name: 'Быстрый апгрейд',
-      priceFrom: 'от 12 000 ₽',
-      badge: 'Идеально для регулярной уборки',
-      bullets: ['Кухня и санузел', 'Пылесос и влажная уборка', 'Проверка по чек-листу'],
-      mediaPreview: 'images/placeholder.svg',
-      ctaLabel: 'Мой вариант'
+      type: 'video',
+      src: 'videos/gallery-01.mp4',
+      poster: 'images/placeholder.svg',
+      label: 'Видео процесса'
     },
     {
-      name: 'Премиум квартира',
-      priceFrom: 'от 22 000 ₽',
-      badge: 'Хит сезона',
-      bullets: ['Полировка поверхностей', 'Постель и текстиль', 'Отчет в мессенджере'],
-      mediaPreview: 'images/placeholder.svg',
-      ctaLabel: 'Хочу этот пакет'
+      type: 'video',
+      src: 'videos/gallery-02.mp4',
+      poster: 'images/placeholder.svg',
+      label: 'Видео полировки'
     },
     {
-      name: 'Офис без следов',
-      priceFrom: 'от 30 000 ₽',
-      badge: 'Для команд и шоурумов',
-      bullets: ['Рабочие зоны и кухня', 'Дезинфекция точек касания', 'Гибкое время начала'],
-      mediaPreview: 'images/placeholder.svg',
-      ctaLabel: 'Подойдет мне'
+      type: 'video',
+      src: 'videos/gallery-03.mp4',
+      poster: 'images/placeholder.svg',
+      label: 'Видео кухни'
     },
     {
-      name: 'После переезда',
-      priceFrom: 'от 38 000 ₽',
-      badge: 'Глубокая очистка',
-      bullets: ['Пыль и следы ремонта', 'Мытье стекол', 'Контроль качества в день уборки'],
-      mediaPreview: 'images/placeholder.svg',
-      ctaLabel: 'Выбрать пакет'
-    }
-  ],
-  checklists: [
-    {
-      key: 'flat',
-      title: 'Квартира',
-      subtitle: 'Аккуратная ежедневная чистота с фокусом на кухню и санузел.',
-      bullets: ['Сухая и влажная уборка', 'Мытье зеркал и стекол', 'Сортировка и сбор мусора', 'Уход за кухонными фасадами'],
-      gallery: [
-        'images/placeholder.svg',
-        'images/placeholder.svg',
-        'images/placeholder.svg',
-        {
-          type: 'video',
-          src: 'videos/checklist-flat.mp4',
-          poster: 'images/placeholder.svg',
-          label: 'Видео процесса уборки квартиры'
-        }
-      ]
+      type: 'video',
+      src: 'videos/gallery-04.mp4',
+      poster: 'images/placeholder.svg',
+      label: 'Видео санузла'
     },
     {
-      key: 'house',
-      title: 'Дом / Коттедж',
-      subtitle: 'Большие площади и сложные поверхности под контролем чек-листа.',
-      bullets: ['Лестницы и перила', 'Чистка входных групп', 'Уход за каменными поверхностями', 'Проветривание и ароматизация'],
-      gallery: [
-        'images/placeholder.svg',
-        'images/placeholder.svg',
-        'images/placeholder.svg',
-        {
-          type: 'video',
-          src: 'videos/checklist-house.mp4',
-          poster: 'images/placeholder.svg',
-          label: 'Видео процесса уборки дома'
-        }
-      ]
+      type: 'video',
+      src: 'videos/gallery-05.mp4',
+      poster: 'images/placeholder.svg',
+      label: 'Видео текстиля'
     },
     {
-      key: 'office',
-      title: 'Офис',
-      subtitle: 'Деликатная уборка рабочих мест без отвлечения команды.',
-      bullets: ['Рабочие столы и техника', 'Обработка санузлов', 'Контроль расходников', 'Точечная дезинфекция'],
-      gallery: [
-        'images/placeholder.svg',
-        'images/placeholder.svg',
-        'images/placeholder.svg',
-        {
-          type: 'video',
-          src: 'videos/checklist-office.mp4',
-          poster: 'images/placeholder.svg',
-          label: 'Видео процесса уборки офиса'
-        }
-      ]
+      type: 'video',
+      src: 'videos/gallery-06.mp4',
+      poster: 'images/placeholder.svg',
+      label: 'Видео финальной проверки'
     }
   ],
   reviews: [
