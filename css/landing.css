@@ -28,6 +28,26 @@
   word-break: break-word;
 }
 
+.logo-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+  font-weight: 700;
+  color: var(--color-brand-2);
+}
+
+.logo-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  padding: 2px;
+}
+
 .logo span {
   font-size: 0.9rem;
   color: var(--color-text-muted);
