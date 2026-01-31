@@ -447,8 +447,8 @@
 
 @media (max-width: 900px) {
   .logo {
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 8px;
     flex: 1;
     min-width: 0;
@@ -464,14 +464,10 @@
   }
 
   .logo-tagline {
-    display: inline;
+    display: block;
     font-size: 0.8rem;
-    margin-left: 6px;
+    margin-left: 0;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-width: 0;
-    flex: 1 1 auto;
   }
 
   .nav-links {
