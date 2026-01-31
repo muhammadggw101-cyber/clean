@@ -1,4 +1,4 @@
-const { hero, guarantee, casesBeforeAfter, packages, checklists, reviews, contacts } = window.SiteContent;
+const { hero, guarantee, services, gallery, reviews, contacts } = window.SiteContent;
 
 const iconMap = {
   shoe: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16c4 0 6-4 8-4s4 2 8 2v4H4v-2z"/><path d="M6 16v-2"/></svg>',
@@ -53,131 +53,51 @@ if (benefitList) {
     .join('');
 }
 
-const casesTrack = document.querySelector('[data-cases="track"]');
-if (casesTrack) {
-  casesTrack.innerHTML = casesBeforeAfter
-    .map((item, index) => {
-      const dots = Array.from({ length: 5 }, (_, i) =>
-        `<span class="difficulty-dot ${i < item.difficulty ? 'active' : ''}"></span>`
-      ).join('');
-      return `
-        <article class="card case-card">
-          <div class="before-after" style="--split: 50%" data-before-after>
-            <img src="${item.beforeImage}" alt="До уборки: ${item.title}" loading="lazy">
-            <img class="after-image" src="${item.afterImage}" alt="После уборки: ${item.title}" loading="lazy">
-            <div class="before-after-labels">
-              <span class="badge">До</span>
-              <span class="badge">После</span>
-            </div>
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              class="before-after__range"
-              aria-label="Сравнение до и после для кейса ${index + 1}"
-            >
-            <div class="before-after__handle" aria-hidden="true">↔</div>
-          </div>
-          <div>
-            <h3>${item.title}</h3>
-            <p>${item.description}</p>
-          </div>
-          <div class="case-meta">
-            <div class="difficulty" aria-label="Сложность ${item.difficulty} из 5">
-              <span>Сложность</span>
-              <span class="difficulty-dots">${dots}</span>
-              <strong>${item.difficulty}/5</strong>
-            </div>
-            <button class="button secondary" data-open-modal>${item.ctaLabel}</button>
-          </div>
-        </article>`;
-    })
-    .join('');
-}
-
-const packagesGrid = document.querySelector('[data-packages="grid"]');
-if (packagesGrid) {
-  packagesGrid.innerHTML = packages
+const servicesRow = document.querySelector('[data-services="row"]');
+if (servicesRow) {
+  servicesRow.innerHTML = services
     .map(
       (item) => `
-      <article class="card package-card">
-        <span class="badge">${item.badge}</span>
-        <h3>${item.name}</h3>
-        <p class="package-price">${item.priceFrom}</p>
-        <div class="package-media">
-          <img src="${item.mediaPreview}" alt="${item.name}" loading="lazy">
+      <article class="scroll-card service-card">
+        <div>
+          <h3>${item.title}</h3>
+          <p>${item.description}</p>
         </div>
-        <ul class="package-list">
-          ${item.bullets.map((bullet) => `<li>${bullet}</li>`).join('')}
-        </ul>
-        <button class="button primary" data-open-modal>${item.ctaLabel}</button>
+        <button class="button secondary" data-open-modal>Заказать услугу</button>
       </article>`
     )
     .join('');
 }
 
-const tabsList = document.querySelector('[data-tabs="list"]');
-const panelsWrap = document.querySelector('[data-tabs="panels"]');
-if (tabsList && panelsWrap) {
-  tabsList.innerHTML = checklists
-    .map(
-      (item, index) => `
-      <button
-        class="tab-button"
-        role="tab"
-        aria-selected="${index === 0}"
-        aria-controls="panel-${item.key}"
-        id="tab-${item.key}"
-        data-tab="${item.key}"
-      >${item.title}</button>`
-    )
-    .join('');
-
-  panelsWrap.innerHTML = checklists
-    .map(
-      (item, index) => `
-      <div
-        class="checklist-panel ${index === 0 ? 'active' : ''}"
-        role="tabpanel"
-        id="panel-${item.key}"
-        aria-labelledby="tab-${item.key}"
-      >
-        <div>
-          <h3>${item.title}</h3>
-          <p>${item.subtitle}</p>
-          <ul>
-            ${item.bullets.map((bullet) => `<li>${bullet}</li>`).join('')}
-          </ul>
-        </div>
-        <div class="gallery-grid">
-          ${item.gallery
-            .map((media, idx) => {
-              if (typeof media === 'string') {
-                return `
-              <button type="button" data-lightbox="${media}" aria-label="Открыть фото ${idx + 1} для ${item.title}">
-                <img src="${media}" alt="${item.title} — фото ${idx + 1}" loading="lazy">
-              </button>`;
-              }
-              if (media?.type === 'video') {
-                const label = media.label || `Видео ${idx + 1} для ${item.title}`;
-                const poster = media.poster || '';
-                const type = media.mimeType || 'video/mp4';
-                return `
-              <div class="gallery-video" role="group" aria-label="${label}">
-                <video autoplay muted loop playsinline controls preload="metadata" poster="${poster}">
-                  <source src="${media.src}" type="${type}">
-                  Ваш браузер не поддерживает видео.
-                </video>
-                <span class="gallery-video__label">${label}</span>
-              </div>`;
-              }
-              return '';
-            })
-            .join('')}
-        </div>
-      </div>`
-    )
+const galleryGrid = document.querySelector('[data-gallery="grid"]');
+if (galleryGrid) {
+  galleryGrid.innerHTML = gallery
+    .map((item, index) => {
+      if (item.type === 'video') {
+        const label = item.label || `Видео ${index + 1}`;
+        const poster = item.poster || '';
+        const type = item.mimeType || 'video/mp4';
+        return `
+          <div class="scroll-card gallery-item gallery-item--video" role="group" aria-label="${label}">
+            <video autoplay muted loop playsinline controls preload="metadata" poster="${poster}">
+              <source src="${item.src}" type="${type}">
+              Ваш браузер не поддерживает видео.
+            </video>
+            <span class="gallery-caption">${label}</span>
+          </div>`;
+      }
+      const label = item.label || `Фото ${index + 1}`;
+      return `
+        <button
+          type="button"
+          class="scroll-card gallery-item gallery-item--image"
+          data-lightbox="${item.src}"
+          aria-label="Открыть фото: ${label}"
+        >
+          <img src="${item.src}" alt="${label}" loading="lazy">
+          <span class="gallery-caption">${label}</span>
+        </button>`;
+    })
     .join('');
 }
 
@@ -186,7 +106,7 @@ if (reviewsGrid) {
   reviewsGrid.innerHTML = reviews
     .map(
       (item) => `
-      <article class="card review-card">
+      <article class="scroll-card review-card">
         <span class="review-badge">Проверенный отзыв</span>
         <button type="button" data-lightbox="${item.image}" aria-label="Открыть отзыв">
           <img src="${item.image}" alt="${item.label}" loading="lazy">
@@ -216,50 +136,6 @@ if (socialsList) {
     )
     .join('');
 }
-
-const setupBeforeAfter = () => {
-  document.querySelectorAll('[data-before-after]').forEach((container) => {
-    const range = container.querySelector('.before-after__range');
-    if (!range) return;
-    const update = () => {
-      container.style.setProperty('--split', `${range.value}%`);
-    };
-    range.addEventListener('input', update);
-    update();
-  });
-};
-
-const setupTabs = () => {
-  const tabButtons = document.querySelectorAll('[data-tab]');
-  const panels = document.querySelectorAll('.checklist-panel');
-  tabButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      tabButtons.forEach((button) => button.setAttribute('aria-selected', 'false'));
-      panels.forEach((panel) => panel.classList.remove('active'));
-      btn.setAttribute('aria-selected', 'true');
-      const target = document.getElementById(`panel-${btn.dataset.tab}`);
-      if (target) target.classList.add('active');
-    });
-  });
-};
-
-const setupCarouselControls = () => {
-  const track = document.querySelector('[data-cases="track"]');
-  if (!track) return;
-  const prevBtn = document.querySelector('[data-carousel="prev"]');
-  const nextBtn = document.querySelector('[data-carousel="next"]');
-  const scrollAmount = () => track.clientWidth * 0.9;
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
-    });
-  }
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      track.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
-    });
-  }
-};
 
 const setupModal = () => {
   const modal = document.getElementById('leadModal');
@@ -354,7 +230,7 @@ const setupMenuToggle = () => {
   if (!toggle || !nav) return;
   const updateToggle = (isOpen) => {
     toggle.setAttribute('aria-expanded', String(isOpen));
-    toggle.textContent = isOpen ? '✕' : 'Меню';
+    toggle.textContent = isOpen ? 'Закрыть' : 'Меню';
     toggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
   };
   toggle.addEventListener('click', () => {
@@ -381,9 +257,6 @@ const setupHeaderCompact = () => {
   window.addEventListener('scroll', update, { passive: true });
 };
 
-setupBeforeAfter();
-setupTabs();
-setupCarouselControls();
 setupModal();
 setupLightbox();
 setupMenuToggle();

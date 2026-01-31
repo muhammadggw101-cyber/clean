@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Формула чистоты — премиальный клининг</title>
-  <meta name="description" content="Формула чистоты — клининг с прозрачной сметой, чек-листами и гарантией качества.">
+  <meta name="description" content="Формула чистоты — клининг с прозрачной сметой, галереей работ и гарантией качества.">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="shortcut icon" href="favicon/favicon.ico">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="css/landing.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,17 +19,25 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#hero">Формула чистоты <span>Клининг нового уровня</span></a>
+      <a class="logo" href="#hero">
+        <span class="logo-main">
+          <img class="logo-mark" src="favicon/favicon-32x32.png" alt="" aria-hidden="true" loading="lazy">
+          <span class="logo-text">Формула чистоты</span>
+        </span>
+        <span class="logo-tagline">Клининг нового уровня</span>
+      </a>
       <nav class="nav-links" data-menu aria-label="Основная навигация">
+        <div class="nav-cta">
+          <button class="button primary" data-open-modal>Заказать уборку</button>
+        </div>
         <a class="nav-link" href="#guarantee">Гарантии</a>
-        <a class="nav-link" href="#cases">До / После</a>
-        <a class="nav-link" href="#packages">Пакеты</a>
-        <a class="nav-link" href="#checklists">Чек-листы</a>
+        <a class="nav-link" href="#services">Услуги</a>
+        <a class="nav-link" href="#gallery">Галерея</a>
         <a class="nav-link" href="#reviews">Отзывы</a>
         <a class="nav-link" href="#contacts">Контакты</a>
       </nav>
       <div class="header-actions">
-        <button class="button secondary" data-open-modal>Заказать уборку</button>
+        <button class="button primary" data-open-modal>Заказать уборку</button>
         <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Открыть меню">Меню</button>
       </div>
     </div>
@@ -39,7 +52,7 @@
           <p data-hero="subtitle"></p>
           <div class="hero-actions">
             <button class="button primary" data-open-modal data-hero="primary"></button>
-            <a class="button secondary" href="#packages" data-hero="secondary"></a>
+            <a class="button secondary" href="#services" data-hero="secondary"></a>
           </div>
         </div>
         <div class="hero-media" aria-hidden="true">
@@ -65,34 +78,19 @@
       </div>
     </section>
 
-    <section id="cases" class="cases">
+    <section id="services" class="services">
       <div class="container">
-        <div class="section-title">До / После</div>
-        <p class="section-subtitle">Сравните реальные кейсы и почувствуйте разницу между «до» и «после».</p>
-        <div class="carousel-controls">
-          <button class="carousel-button" type="button" data-carousel="prev" aria-label="Предыдущий кейс">Назад</button>
-          <button class="carousel-button" type="button" data-carousel="next" aria-label="Следующий кейс">Дальше</button>
-        </div>
-        <div class="carousel">
-          <div class="carousel-track" data-cases="track" aria-live="polite"></div>
-        </div>
+        <h2 class="section-title">Услуги</h2>
+        <p class="section-subtitle">Все ключевые услуги — в одной ленте, листайте и выбирайте нужное.</p>
+        <div class="scroll-row" data-services="row" aria-label="Услуги"></div>
       </div>
     </section>
 
-    <section id="packages" class="packages">
+    <section id="gallery" class="gallery">
       <div class="container">
-        <h2 class="section-title">Пакетные предложения</h2>
-        <p class="section-subtitle">Фиксированные решения без конструктора — выбирайте удобный формат.</p>
-        <div class="packages-grid" data-packages="grid"></div>
-      </div>
-    </section>
-
-    <section id="checklists" class="checklists">
-      <div class="container">
-        <h2 class="section-title">Чек-листы</h2>
-        <p class="section-subtitle">Каждый формат уборки оформлен в понятные шаги и фотопримеры.</p>
-        <div class="tabs" role="tablist" data-tabs="list"></div>
-        <div data-tabs="panels"></div>
+        <h2 class="section-title">Галерея</h2>
+        <p class="section-subtitle">Реальные кадры из наших уборок — фото и короткие видео в единой ленте.</p>
+        <div class="scroll-row" data-gallery="grid" aria-label="Галерея работ"></div>
       </div>
     </section>
 
@@ -100,7 +98,7 @@
       <div class="container">
         <h2 class="section-title">Отзывы наших клиентов</h2>
         <p class="section-subtitle">Все отзывы подтверждены — мы показываем реальные впечатления без рекламных фильтров.</p>
-        <div class="reviews-grid" data-reviews="grid"></div>
+        <div class="scroll-row" data-reviews="grid" aria-label="Отзывы"></div>
       </div>
     </section>
   </main>
@@ -124,9 +122,8 @@
         <ul>
           <li><a href="#hero">Главная</a></li>
           <li><a href="#guarantee">Гарантии</a></li>
-          <li><a href="#cases">До / После</a></li>
-          <li><a href="#packages">Пакеты</a></li>
-          <li><a href="#checklists">Чек-листы</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#gallery">Галерея</a></li>
           <li><a href="#reviews">Отзывы</a></li>
           <li><a href="#contacts">Контакты</a></li>
         </ul>
