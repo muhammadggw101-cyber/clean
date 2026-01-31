@@ -1,4 +1,4 @@
-const { hero, guarantee, packages, gallery, reviews, contacts } = window.SiteContent;
+const { hero, guarantee, services, gallery, reviews, contacts } = window.SiteContent;
 
 const iconMap = {
   shoe: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16c4 0 6-4 8-4s4 2 8 2v4H4v-2z"/><path d="M6 16v-2"/></svg>',
@@ -53,22 +53,17 @@ if (benefitList) {
     .join('');
 }
 
-const packagesGrid = document.querySelector('[data-packages="grid"]');
-if (packagesGrid) {
-  packagesGrid.innerHTML = packages
+const servicesRow = document.querySelector('[data-services="row"]');
+if (servicesRow) {
+  servicesRow.innerHTML = services
     .map(
       (item) => `
-      <article class="card package-card">
-        <span class="badge">${item.badge}</span>
-        <h3>${item.name}</h3>
-        <p class="package-price">${item.priceFrom}</p>
-        <div class="package-media">
-          <img src="${item.mediaPreview}" alt="${item.name}" loading="lazy">
+      <article class="scroll-card service-card">
+        <div>
+          <h3>${item.title}</h3>
+          <p>${item.description}</p>
         </div>
-        <ul class="package-list">
-          ${item.bullets.map((bullet) => `<li>${bullet}</li>`).join('')}
-        </ul>
-        <button class="button primary" data-open-modal>${item.ctaLabel}</button>
+        <button class="button secondary" data-open-modal>Заказать услугу</button>
       </article>`
     )
     .join('');
@@ -83,7 +78,7 @@ if (galleryGrid) {
         const poster = item.poster || '';
         const type = item.mimeType || 'video/mp4';
         return `
-          <div class="gallery-item gallery-item--video" role="group" aria-label="${label}">
+          <div class="scroll-card gallery-item gallery-item--video" role="group" aria-label="${label}">
             <video autoplay muted loop playsinline controls preload="metadata" poster="${poster}">
               <source src="${item.src}" type="${type}">
               Ваш браузер не поддерживает видео.
@@ -95,7 +90,7 @@ if (galleryGrid) {
       return `
         <button
           type="button"
-          class="gallery-item gallery-item--image"
+          class="scroll-card gallery-item gallery-item--image"
           data-lightbox="${item.src}"
           aria-label="Открыть фото: ${label}"
         >
@@ -111,7 +106,7 @@ if (reviewsGrid) {
   reviewsGrid.innerHTML = reviews
     .map(
       (item) => `
-      <article class="card review-card">
+      <article class="scroll-card review-card">
         <span class="review-badge">Проверенный отзыв</span>
         <button type="button" data-lightbox="${item.image}" aria-label="Открыть отзыв">
           <img src="${item.image}" alt="${item.label}" loading="lazy">
@@ -235,7 +230,7 @@ const setupMenuToggle = () => {
   if (!toggle || !nav) return;
   const updateToggle = (isOpen) => {
     toggle.setAttribute('aria-expanded', String(isOpen));
-    toggle.textContent = isOpen ? '✕' : 'Меню';
+    toggle.textContent = isOpen ? 'Закрыть' : 'Меню';
     toggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
   };
   toggle.addEventListener('click', () => {
