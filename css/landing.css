@@ -450,6 +450,22 @@
     display: none;
   }
 
+  .logo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: none;
+  }
+
+  .logo-main {
+    gap: 8px;
+  }
+
+  .logo-text {
+    white-space: nowrap;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
